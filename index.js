@@ -2,6 +2,7 @@
 
 const Account = require('./lib/account');
 const Bot = require('./lib/bot');
+const Challenges = require('./lib/challenges');
 const Client = require('./lib/client')
 const Games = require('./lib/games')
 const Relations = require('./lib/relations')
@@ -15,6 +16,7 @@ class Lichess {
     this._relations = new Relations(client)
     this._users = new Users(client)
     this._bot = new Bot(client)
+    this._challenges = new Challenges(client)
   }
 
   get account() {
@@ -35,6 +37,10 @@ class Lichess {
 
   get bot() {
     return this._bot
+  }
+
+  get challenges() {
+    return this._challenges
   }
 }
 
